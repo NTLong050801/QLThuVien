@@ -7,13 +7,6 @@ class BaseModel extends Database
   {
     $this->connect = $this->connect();
   }
-
- 
-
-
-
-
-
   public function query($sql)
   {
     return mysqli_query($this->connect, $sql);
