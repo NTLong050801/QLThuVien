@@ -5,7 +5,7 @@ class Database
     const USERNAME = 'root';
     const PASSWORD = '' ;
     const DB_NAME = 'qltv';
-    const URL = "http://localhost/clothes/";
+    const URL = "http://localhost:88/qlthuVien/public/";
     // URL: =
     private  $connect;
     public function connect(){

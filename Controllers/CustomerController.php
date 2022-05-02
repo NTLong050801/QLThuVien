@@ -5,7 +5,7 @@ class CustomerController extends BaseController{
         // echo '123';
     }
     public function index(){
-        echo __METHOD__;
+        return $this->view("frontend.customer.index");
     }
 }
 ?>

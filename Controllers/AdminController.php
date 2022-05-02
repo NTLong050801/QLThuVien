@@ -9,15 +9,26 @@ class  AdminController extends BaseController{
         
     }
     public function index(){
-        echo"ddaya la admincontrller";
+        return $this->view("frontend.admin.index");
     }
-    //http://localhost:88/QLThuVien/index.php?controller=admin&action=test
     public function get_cate(){
-        $data= $this -> AdminModel -> getALL();
-        return $this-> view("frontend.admin.index",[
-            'datas' => $data
+        $data_cate = $this-> AdminModel->getALL("categories");
+        return $this->view("frontend.admin.data_quanly",[
+            "check_act" =>  "cate",
+            "data_cates"=> $data_cate
         ]);
-       
     }
+    public function delete_cate(){
+        $ar = $_POST;
+        $data = $this-> AdminModel->  deleteByID("categories",$ar);
+        if($data){
+            echo "Xóa thành công";
+        }else{
+            echo "Fail";
+        }
+        // print_r($ar) ;
+        
+    }
+
 }
 ?>

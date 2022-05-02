@@ -1,13 +1,10 @@
 <?php
 class AdminModel extends BaseModel{
-    public function getALL() {
-        $sql = "SELect * from Categories";
-        $query = $this-> query($sql);
-        $ar = [];
-        while ($row = mysqli_fetch_assoc($query)) {
-            array_push($ar, $row);
-        }
-        return $ar;
+    public function getALL($table) {
+        return $this-> get_all($table);
+    }
+    public function deleteByID($table,$ar){
+        return $this-> delete_ID($table,$ar);
     }
 
 }
